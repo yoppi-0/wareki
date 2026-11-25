@@ -2,10 +2,16 @@
 # SPDX-FileCopyrightText: 2026 yoppi-0
 # SPDX-License-Identifier: BSD-3-Clause
 import sys
+import datetime
+
+this_year = datetime.date.today().year
 
 for n in sys.stdin:
 	year = int(n)
-	if year >= 2019:
+	if year > this_year:
+		print("未来の年には対応していません" , file = sys.stderr)
+		sys.exit(1)
+	elif year >= 2019:
 		print("令和" + str(year - 2018) )
 	elif year >= 1989:
 		print("平成" + str(year - 1988) )
