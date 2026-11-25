@@ -2,7 +2,6 @@
 # SPDX-FileCopyrightText: 2026 yoppi-0
 # SPDX-License-Identifier: BSD-3-Clause
 import sys
-
 for n in sys.stdin:
 	year = int(n)
 	if year >= 2019:
