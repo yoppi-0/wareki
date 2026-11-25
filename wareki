@@ -15,3 +15,6 @@ for n in sys.stdin:
 		print("大正" + str(year - 1911) )
 	elif year >= 1868:
 		print("明治" + str(year - 1867) )
+	else:
+		print("1868年より前の年には対応していません", file=sys.stderr)
+		sys.exit(1)
