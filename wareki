@@ -7,7 +7,11 @@ import datetime
 this_year = datetime.date.today().year
 
 for n in sys.stdin:
-	year = int(n)
+	try:
+		year = int(n)
+	except ValueError:
+		print("西暦の年を整数で入力してください", file=sys.stderr)
+		sys.exit(1)
 	if year > this_year:
 		print("未来の年には対応していません" , file = sys.stderr)
 		sys.exit(1)
