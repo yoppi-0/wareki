@@ -14,6 +14,42 @@ out=$(echo 2026 | ./wareki)
 [ "$?" = 0 ]          || ng "$LINENO"
 [ "${out}" = 令和8 ]  || ng "$LINENO"
 
+out=$(echo 2019 | ./wareki)
+[ "$?" = 0 ]          || ng "$LINENO"
+[ "${out}" = 令和1 ]  || ng "$LINENO"
+
+out=$(echo 2018 | ./wareki)
+[ "$?" = 0 ]          || ng "$LINENO"
+[ "${out}" = 平成30 ]  || ng "$LINENO"
+
+out=$(echo 1989 | ./wareki)
+[ "$?" = 0 ]          || ng "$LINENO"
+[ "${out}" = 平成1 ]  || ng "$LINENO"
+
+out=$(echo 1988 | ./wareki)
+[ "$?" = 0 ]          || ng "$LINENO"
+[ "${out}" = 昭和63 ]  || ng "$LINENO"
+
+out=$(echo 1926 | ./wareki)
+[ "$?" = 0 ]          || ng "$LINENO"
+[ "${out}" = 昭和1 ]  || ng "$LINENO"
+
+out=$(echo 1925 | ./wareki)
+[ "$?" = 0 ]          || ng "$LINENO"
+[ "${out}" = 大正14 ]  || ng "$LINENO"
+
+out=$(echo 1912 | ./wareki)
+[ "$?" = 0 ]          || ng "$LINENO"
+[ "${out}" = 大正1 ]  || ng "$LINENO"
+
+out=$(echo 1911 | ./wareki)
+[ "$?" = 0 ]          || ng "$LINENO"
+[ "${out}" = 明治44 ]  || ng "$LINENO"
+
+out=$(echo 1868 | ./wareki)
+[ "$?" = 0 ]          || ng "$LINENO"
+[ "${out}" = 明治1 ]  || ng "$LINENO"
+
 ### STRANGE INPUT ###
 out=$(echo あ | ./wareki)
 [ "$?" = 1 ]          || ng "$LINENO"
