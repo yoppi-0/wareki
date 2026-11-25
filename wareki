@@ -6,8 +6,10 @@ import sys
 for n in sys.stdin:
 	year = int(n)
 	if year >= 2019:
-		print("令和" + str(year - 2018)+"年")
+		print("令和" + str(year - 2018) + "年")
 	elif year >= 1989:
-		print("平成" + str(year - 1988)+"年")
+		print("平成" + str(year - 1988) + "年")
 	elif year >= 1926:
-		print("昭和" + str(year - 1925)+"年")
+		print("昭和" + str(year - 1925) + "年")
+	elif year >= 1912:
+		print("大正" + str(year - 1911) + "年")
