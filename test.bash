@@ -55,5 +55,21 @@ out=$(echo あ | ./wareki)
 [ "$?" = 1 ]          || ng "$LINENO"
 [ "${out}" = "" ]     || ng "$LINENO"
 
+out=$(echo 1867 | ./wareki)
+[ "$?" = 1 ]          || ng "$LINENO"
+[ "${out}" = "" ]     || ng "$LINENO"
+
+out=$(echo 20000 | ./wareki)
+[ "$?" = 1 ]          || ng "$LINENO"
+[ "${out}" = "" ]     || ng "$LINENO"
+
+out=$(echo  | ./wareki)
+[ "$?" = 1 ]          || ng "$LINENO"
+[ "${out}" = "" ]     || ng "$LINENO"
+
+out=$(echo 2000.5 | ./wareki)
+[ "$?" = 1 ]          || ng "$LINENO"
+[ "${out}" = "" ]     || ng "$LINENO"
+
 [ "${res}" = 0 ] && echo OK
 exit $res
