@@ -9,3 +9,5 @@ for n in sys.stdin:
 		print("令和" + str(year - 2018)+"年")
 	elif year >= 1989:
 		print("平成" + str(year - 1988)+"年")
+	elif year >= 1926:
+		print("昭和" + str(year - 1925)+"年")
