@@ -50,6 +50,10 @@ out=$(echo 1868 | ./wareki)
 [ "$?" = 0 ]          || ng "$LINENO"
 [ "${out}" = 明治1 ]  || ng "$LINENO"
 
+out=$(echo -e "2026\n1990" | ./wareki)
+[ "$?" = 0 ]                       || ng "$LINENO"
+[ "${out}" = $'令和8\n平成2' ]     || ng "$LINENO"
+
 ### STRANGE INPUT ###
 out=$(echo あ | ./wareki)
 [ "$?" = 1 ]          || ng "$LINENO"
@@ -70,6 +74,10 @@ out=$(echo  | ./wareki)
 out=$(echo 2000.5 | ./wareki)
 [ "$?" = 1 ]          || ng "$LINENO"
 [ "${out}" = "" ]     || ng "$LINENO"
+
+out=$(echo -e "2026\nあ\n1990" | ./wareki)
+[ "$?" = 1 ]                       || ng "$LINENO"
+[ "${out}" = 令和8 ]     || ng "$LINENO"
 
 [ "${res}" = 0 ] && echo OK
 exit $res
